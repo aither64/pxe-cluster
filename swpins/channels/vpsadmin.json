@@ -1,0 +1,35 @@
+{
+  "vpsadmin": {
+    "type": "git-rev",
+    "nix_options": {
+      "fetchSubmodules": false,
+      "update": {
+        "auto": false,
+        "interval": 3600,
+        "ref": "refs/heads/master"
+      },
+      "url": "https://github.com/vpsfreecz/vpsadmin"
+    },
+    "state": {
+      "rev": "30b1b74168ca6b88cbbc9a6cae771a7f1d2724e7",
+      "date": "2021-09-13T10:22:55+02:00"
+    },
+    "info": {
+      "rev": "30b1b74168ca6b88cbbc9a6cae771a7f1d2724e7",
+      "sha256": "0l6a7brabfw8dvxisfav6saz4rg7pnylilbbfdgfysi52xilsxsa"
+    },
+    "fetcher": {
+      "type": "git-rev",
+      "options": {
+        "rev": "30b1b74168ca6b88cbbc9a6cae771a7f1d2724e7",
+        "wrapped_fetcher": {
+          "type": "zip",
+          "options": {
+            "url": "https://github.com/vpsfreecz/vpsadmin/archive/30b1b74168ca6b88cbbc9a6cae771a7f1d2724e7.tar.gz",
+            "sha256": "0l6a7brabfw8dvxisfav6saz4rg7pnylilbbfdgfysi52xilsxsa"
+          }
+        }
+      }
+    }
+  }
+}
