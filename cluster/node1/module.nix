@@ -2,12 +2,13 @@
 {
   cluster."node1" = {
     spin = "vpsadminos";
-    
+
     swpins.channels = [ "nodes" ];
 
     node = {
       id = 101;
       role = "hypervisor";
+      storageType = "ssd";
     };
 
     host = {
