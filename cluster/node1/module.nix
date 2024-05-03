@@ -12,7 +12,7 @@
 
     host = {
       name = "node1";
-      location = "home";
+      location = "dev";
       domain = "vpsfree.cz";
     };
 

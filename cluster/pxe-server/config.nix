@@ -1,12 +1,4 @@
 { config, pkgs, lib, confDir, confLib, confData, ... }:
-let
-  images = import ../../../vpsfree.cz/vpsfree-cz-configuration/lib/images.nix {
-    inherit config lib pkgs confDir confLib confData;
-    nixosModules = [
-      ../../environments/base.nix
-    ];
-  };
-in
 {
   imports = [
     ./hardware.nix
@@ -20,9 +12,14 @@ in
   networking.hostName = "pxe-server";
 
   networking.useDHCP = false;
-  networking.interfaces.enp1s0.useDHCP = true;
+  networking.interfaces.enp1s0.ipv4.addresses = [
+    { address = "192.168.100.5"; prefixLength = 24; }
+  ];
+  networking.defaultGateway = "192.168.100.1";
+  networking.nameservers = [ "192.168.100.1" ];
 
   i18n.defaultLocale = "en_US.UTF-8";
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
@@ -32,17 +29,6 @@ in
   ];
 
   services.openssh.enable = true;
-  
-  services.netboot = {
-    enable = true;
-    host = "192.168.2.233";
-    inherit (images) nixosItems;
-    vpsadminosItems = images.allNodes "vpsfree.cz";
-    includeNetbootxyz = true;
-    allowedIPRanges = [
-      "192.168.2.0/24"
-    ];
-  };
 
-  system.stateVersion = "21.05";
+  system.stateVersion = "23.11";
 }

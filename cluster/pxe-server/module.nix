@@ -5,9 +5,9 @@
     swpins.channels = [ "nixos-stable" ];
     host = {
       name = "pxe-server";
-      location = "home";
+      location = "dev";
       domain = "vpsfree.cz";
-      target = "192.168.2.233";
+      target = "192.168.100.5";
     };
   };
 }
