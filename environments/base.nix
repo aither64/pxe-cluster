@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     vim
     screen
+    tree
   ];
 
   users.users.root.openssh.authorizedKeys.keys = with confData.sshKeys; admins;
