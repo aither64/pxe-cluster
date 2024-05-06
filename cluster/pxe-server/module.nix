@@ -16,12 +16,14 @@
           machine = "nixos";
           alias = "nixos";
           buildAttribute = [ "system" "build" "dist" ];
+          tags = [ "pxe" ];
         }
         {
           machine = "node1";
           alias = "node1";
           extraModules = [ ../../configs/pxe-only.nix ];
           buildAttribute = [ "system" "build" "dist" ];
+          tags = [ "pxe" ];
         }
       ];
     };
