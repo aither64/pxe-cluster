@@ -9,5 +9,21 @@
       domain = "vpsfree.cz";
       target = "192.168.100.5";
     };
+    carrier = {
+      enable = true;
+      machines = [
+        {
+          machine = "nixos";
+          alias = "nixos";
+          buildAttribute = [ "system" "build" "dist" ];
+        }
+        {
+          machine = "node1";
+          alias = "node1";
+          extraModules = [ ../../configs/pxe-only.nix ];
+          buildAttribute = [ "system" "build" "dist" ];
+        }
+      ];
+    };
   };
 }

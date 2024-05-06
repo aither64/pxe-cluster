@@ -12,10 +12,10 @@
   };
 
   networking.hostName = "node1";
-  
+
   os.channel-registration.enable = false;
-  
+
   services.haveged.enable = true;
-  
+
   users.users.root.initialHashedPassword = "";
 }
