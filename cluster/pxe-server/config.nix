@@ -27,7 +27,7 @@
   confctl.carrier.netboot = {
     enable = true;
     host = "192.168.100.5";
-    allowedIPRanges = [
+    allowedIPv4Ranges = [
       "192.168.100.0/24"
     ];
   };
