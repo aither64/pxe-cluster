@@ -9,6 +9,7 @@
       name = "nixos";
       location = "dev";
       domain = "vpsfree.cz";
+      target = null;
     };
 
     netboot = {
