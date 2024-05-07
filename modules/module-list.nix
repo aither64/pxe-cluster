@@ -6,7 +6,6 @@ rec {
 
   nixos = shared ++ [
     # Modules only for NixOS
-    ../../vpsfree.cz/vpsfree-cz-configuration/modules/services/netboot.nix
   ];
 
   vpsadminos = shared ++ [
