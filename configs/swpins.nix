@@ -30,10 +30,10 @@ in {
   confctl.swpins.channels = {
     # nixos-unstable = { nixpkgs = nixpkgsBranch "nixos-unstable"; };
 
-    nixos-stable = { nixpkgs = nixpkgsBranch "nixos-23.11"; };
+    nixos-stable = { nixpkgs = nixpkgsBranch "nixos-24.05"; };
 
     nodes = {
-      nixpkgs = nixpkgsBranch "nixos-23.11";
+      nixpkgs = nixpkgsBranch "nixos-24.05";
       vpsadminos = vpsadminosBranch "staging";
       vpsadmin = vpsadminBranch "master";
     };
