@@ -2,6 +2,7 @@
 {
   imports = [
     ../../environments/base.nix
+    ../../configs/crashdump.nix
   ];
 
   boot.initrd.kernelModules = [ "virtio" "virtio_pci" "virtio_net" "virtio_rng" "virtio_blk" "virtio_console" "e1000e" ];
