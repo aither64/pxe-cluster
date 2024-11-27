@@ -27,6 +27,10 @@
   confctl.carrier.netboot = {
     enable = true;
     host = "192.168.100.5";
+    isoImages = [
+      # { file = ../../systemrescue-11.01-amd64.iso; label = "systemrescue"; }
+      # { file = "/srv/mycustom.iso"; }
+    ];
     allowedIPv4Ranges = [
       "192.168.100.0/24"
     ];
