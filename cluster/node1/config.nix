@@ -12,6 +12,7 @@
   };
 
   networking.hostName = "node1";
+  networking.useDHCP = true;
 
   os.channel-registration.enable = false;
 
