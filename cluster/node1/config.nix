@@ -15,6 +15,8 @@
     ];
   };
 
+  boot.zfsBuiltin = false;
+
   networking.hostName = "node1";
   networking.useDHCP = true;
 
