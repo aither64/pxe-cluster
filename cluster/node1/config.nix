@@ -16,6 +16,7 @@
   };
 
   boot.zfsBuiltin = false;
+  services.live-patches.enable = false;
 
   networking.hostName = "node1";
   networking.useDHCP = true;
