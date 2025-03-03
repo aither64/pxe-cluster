@@ -10,6 +10,9 @@
   boot.initrd.network = {
     enable = true;
     useDHCP = true;
+    preferredDHCPInterfaceMacAddresses = [
+      "52:54:00:84:11:45"
+    ];
   };
 
   networking.hostName = "node1";
