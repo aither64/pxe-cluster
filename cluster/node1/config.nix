@@ -24,5 +24,7 @@
 
   services.haveged.enable = true;
 
+  confctl.programs.netboot-kexec.enable = true;
+
   users.users.root.initialHashedPassword = "";
 }
