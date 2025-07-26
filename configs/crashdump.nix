@@ -32,6 +32,7 @@ in {
 
   boot.crashDump = {
     enable = true;
+    kernelParams = [ "console=ttyS0" ];
     commands = ''
       date=$(date +%Y%m%dT%H%M%S)
       server="172.16.0.8:/storage/vpsfree.cz/crashdump"
