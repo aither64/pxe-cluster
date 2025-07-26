@@ -19,7 +19,9 @@ let
     oldName=
   '';
 in {
-  boot.qemu.network.bridge.mac = netifs.oneg0;
+  boot.qemu.networks = [
+    { type = "bridge"; bridge.mac = netifs.oneg0; }
+  ];
 
   boot.initrd.kernelModules = [
     "lockd"
