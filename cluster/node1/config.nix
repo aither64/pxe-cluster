@@ -25,7 +25,25 @@
 
   services.haveged.enable = true;
 
-  confctl.programs.netboot-kexec.enable = true;
+  confctl.programs.kexec-netboot.enable = true;
+
+  runit.halt.hooks = {
+    "kexec-netboot".source = pkgs.writeScript "kexec-netboot" ''
+      #!${pkgs.bash}/bin/bash
+
+      [ "$HALT_HOOK" != "pre-run" ] && exit 0
+      [ "$HALT_ACTION" != "reboot" ] && exit 0
+      [ "$HALT_FORCE" != "0" ] && exit 0
+      [ "$HALT_KEXEC" == "0" ] && exit 0
+
+      echo "Configuring kexec from netboot server"
+      echo "Use --no-kexec to skip it"
+      echo
+
+      kexec-netboot
+      exit $?
+    '';
+  };
 
   users.users.root.initialHashedPassword = "";
 }
